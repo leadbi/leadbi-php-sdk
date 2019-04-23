@@ -27,8 +27,11 @@ require 'vendor/autoload.php';
 use LeadBI\LeadBIAPI;
 
 
-// Show the results of the assembly we spawned
+// Show the results
 echo '<pre>';
 print_r($response);
 echo '</pre>';
 ```
+
+## Examples
+More examples can be found in `./examples` directory.
