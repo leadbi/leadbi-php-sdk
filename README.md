@@ -23,9 +23,16 @@ This example demonstrates how you can use the SDK to access the api.
 ```
 <?php
 require 'vendor/autoload.php';
+require 'config.php';
 
+use LeadBI\LeadBIConfig;
 use LeadBI\LeadBIAPI;
 
+$config = new LeadBIConfig(ACCESS_ID, SECRET_KEY, ENDPOINT, SECURE);
+$config->debug = DEBUG;
+
+$api = new LeadBIAPI($config);
+$response = $api->get("/api/v1/websites");
 
 // Show the results
 echo '<pre>';
