@@ -23,5 +23,11 @@ $newWebsite = $api->create(array(
 
 // update website
 $api->update($newWebsite->insert_id, array(
-    'integrations' => new stdClass()
+    'metadata' => new stdClass()
 ));
+
+// fetch website
+$website = $api->get($newWebsite->insert_id);
+
+// delete website
+$api->remove($newWebsite->insert_id);
