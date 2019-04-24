@@ -65,7 +65,7 @@ class LeadBIAPI {
     /**
      * Make delete request
      */
-    public function delete(){
+    public function delete($path){
         $ch = $this->getCurlObject($path);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'DELETE');
         $result = curl_exec($ch);
