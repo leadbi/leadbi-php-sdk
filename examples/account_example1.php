@@ -6,7 +6,7 @@ require 'example_config.php';
 use LeadBI\LeadBIConfig;
 use LeadBI\Resources\Account;
 
-$config = new LeadBIConfig(ACCESS_ID, SECRET_KEY, ENDPOINT);
+$config = new LeadBIConfig(ACCESS_ID, SECRET_KEY, ENDPOINT, SECURE);
 $config->debug = DEBUG;
 
 $api = new Account($config);
