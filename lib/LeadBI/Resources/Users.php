@@ -2,6 +2,8 @@
 
 namespace LeadBI\Resources;
 
+use LeadBI\LeadBIAPI;
+
 /**
  * LeadBI Users Resource
  */
