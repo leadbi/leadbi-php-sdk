@@ -45,7 +45,7 @@ class Tags {
      * Fetch prospect contact tags
      */
     public function getContactTags($contactId) {
-        return $this->api->get("/api/v1/tags/prospects/{$contactId}");
+        return $this->api->get("/api/v1/tags/contacts/{$contactId}");
     }
 
     /**
