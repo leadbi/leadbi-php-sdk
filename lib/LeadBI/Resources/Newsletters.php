@@ -23,7 +23,7 @@ class Newsletters {
         $query = '';
 
         if($filters){
-            $query .= '?' + \http_build_query($filters);
+            $query .= '?' . \http_build_query($filters);
         }
 
         return $this->api->get("/api/v1/newsletters/{$websiteId}" . $query);
@@ -36,7 +36,7 @@ class Newsletters {
         $query = '';
 
         if($filters){
-            $query .= '?' + \http_build_query($filters);
+            $query .= '?' . \http_build_query($filters);
         }
 
         return $this->api->get("/api/v1/newsletters/{$websiteId}/stats" . $query);
@@ -49,7 +49,7 @@ class Newsletters {
         $query = '';
 
         if($filters){
-            $query .= '?' + \http_build_query($filters);
+            $query .= '?' . \http_build_query($filters);
         }
 
         return $this->api->get("/api/v1/newsletters/{$websiteId}/email_stats" . $query);

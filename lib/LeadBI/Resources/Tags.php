@@ -20,7 +20,7 @@ class Tags {
      * Assign tag to prospect company
      */
     public function assignTagToProspect($prospectId, $tagName) {
-        return $this->api->post("/api/v1/tags/prospects/${$prospectId}", array(
+        return $this->api->post("/api/v1/tags/prospects/{$prospectId}", array(
             'tag_name' => $tagName
         ));
     }
@@ -36,7 +36,7 @@ class Tags {
      * Assign tag to prospect contact
      */
     public function assignTagToContact($contactId, $tagName) {
-        return $this->api->post("/api/v1/tags/contacts/${$contactId}", array(
+        return $this->api->post("/api/v1/tags/contacts/{$contactId}", array(
             'tag_name' => $tagName
         ));
     }
@@ -45,21 +45,21 @@ class Tags {
      * Fetch prospect contact tags
      */
     public function getContactTags($contactId) {
-        return $this->api->get("/api/v1/tags/prospects/{$contactId}");
+        return $this->api->get("/api/v1/tags/contacts/{$contactId}");
     }
 
     /**
      * Remove prospect company tag
      */
     public function removeProspectTag($prospectId) {
-        return $this->api->post("/api/v1/tags/prospects/${$prospectId}", array());
+        return $this->api->post("/api/v1/tags/prospects/{$prospectId}", array());
     }
 
     /**
      * Remove contact tag
      */
     public function removeContactTag($contactId) {
-        return $this->api->post("/api/v1/tags/contacts/${$contactId}", array());
+        return $this->api->post("/api/v1/tags/contacts/{$contactId}", array());
     }
 
     /**

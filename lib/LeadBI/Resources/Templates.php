@@ -23,7 +23,7 @@ class Templates {
         $query = '';
 
         if($filters){
-            $query .= '?' + \http_build_query($filters);
+            $query .= '?' . \http_build_query($filters);
         }
 
         return $this->api->get("/api/v1/templates/{$websiteId}" . $query);
