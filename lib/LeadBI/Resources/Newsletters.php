@@ -9,6 +9,9 @@ use LeadBI\LeadBIAPI;
  */
 class Newsletters {
     
+    // default newsletter editor
+    const DEFAULT_EDITOR = 'default';
+
     /**
      * Create new resource instance
      */
