@@ -17,6 +17,22 @@ class ProspectContacts {
     }
 
     /**
+     * Prepare filters before sending to api
+     */
+    private function prepareFilters($filters) {
+
+        if(isset($filters['tags'])){
+            $filters['tags'] = implode(',', $filters['tags']);
+        }
+
+        if(isset($filters['exclude_tags'])){
+            $filters['exclude_tags'] = implode(',', $filters['exclude_tags']);
+        }
+
+        return $filters;
+    }
+
+    /**
      * Query prospect contacts
      * @param $websiteId
      * @param $filters->start
@@ -48,7 +64,7 @@ class ProspectContacts {
         $query = '';
 
         if($filters){
-            $query .= '?' . \http_build_query($filters);
+            $query .= '?' . \http_build_query($this->prepareFilters($filters));
         }
 
         return $this->api->get("/api/v1/visitors/{$websiteId}/all" . $query);

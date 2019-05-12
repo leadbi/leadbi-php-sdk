@@ -13,6 +13,13 @@ $api = new ProspectContacts($config);
 
 $websiteId = 4;
 
+// fetch contacts
 $contacts = $api->query($websiteId);
 
+// filter contacts by tag
+$contacts = $api->query($websiteId, array(
+    'tags' => [2] // use tag id
+));
+
+// show contents
 var_dump($contacts);
