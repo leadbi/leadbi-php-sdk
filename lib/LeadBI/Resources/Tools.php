@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * NOT Available!
+ */
 namespace LeadBI\Resources;
 
 use LeadBI\LeadBIAPI;
@@ -23,7 +25,7 @@ class Tools
      */
     public function sendApplicationEmail($email)
     {
-        return $this->api->post("/api/v1/tools/send_application_email", $email);
+        throw new \Exception('Api call not available!');
     }
 
 }
