@@ -7,7 +7,7 @@ use LeadBI\LeadBIAPI;
 /**
  * LeadBI Prospect Resource
  */
-class ProspectContacts {
+class Prospects {
 
     /**
      * Create new resource instance
@@ -63,5 +63,21 @@ class ProspectContacts {
      */
     public function history($websiteId, $prospectId) {
         return $this->api->get("/api/v1/prospects/{$websiteId}/all/$prospectId/history");
+    }
+
+    /**
+     * Prepare filters before sending to api
+     */
+    private function prepareFilters($filters) {
+
+        if(isset($filters['tags'])){
+            $filters['tags'] = implode(',', $filters['tags']);
+        }
+
+        if(isset($filters['exclude_tags'])){
+            $filters['exclude_tags'] = implode(',', $filters['exclude_tags']);
+        }
+
+        return $filters;
     }
 }
