@@ -51,15 +51,19 @@ class Tags {
     /**
      * Remove prospect company tag
      */
-    public function removeProspectTag($prospectId) {
-        return $this->api->post("/api/v1/tags/prospects/{$prospectId}", array());
+    public function removeProspectTag($prospectId, $tagName) {
+        return $this->api->delete("/api/v1/tags/prospects/{$prospectId}", array(
+            'tag_name' => $tagName
+        ));
     }
 
     /**
      * Remove contact tag
      */
-    public function removeContactTag($contactId) {
-        return $this->api->post("/api/v1/tags/contacts/{$contactId}", array());
+    public function removeContactTag($contactId, $tagName) {
+        return $this->api->delete("/api/v1/tags/contacts/{$contactId}", array(
+            'tag_name' => $tagName
+        ));
     }
 
     /**
@@ -73,7 +77,7 @@ class Tags {
      * Remove account tag
      */
     public function removeTag($tagId) {
-        return $this->api->get("/api/v1/tags/{$tagId}");
+        return $this->api->delete("/api/v1/tags/{$tagId}");
     }
 }
 
