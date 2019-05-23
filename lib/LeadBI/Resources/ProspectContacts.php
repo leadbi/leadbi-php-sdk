@@ -81,7 +81,7 @@ class ProspectContacts {
      * Create a new contact
      */
     public function create($websiteId, $contact) {
-        return $this->api->put("/api/v1/visitors/{$websiteId}/all/create_contact", $contact);
+        return $this->api->post("/api/v1/visitors/{$websiteId}/all/create_contact", $contact);
     }
 
     /**
