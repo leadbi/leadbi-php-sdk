@@ -19,3 +19,6 @@ $contactTags = $api->getContactTags(92);
 
 // view tags
 var_dump($contactTags);
+
+// delete contact tag
+$api->removeContactTag(92, 'sdk-test');

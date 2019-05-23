@@ -53,6 +53,9 @@ class LeadBIAPI {
         return json_decode($result);
     }
 
+    /**
+     * Make put request
+     */
     public function put($path, $data) {
         $ch = $this->getCurlObject($path);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
@@ -65,9 +68,12 @@ class LeadBIAPI {
     /**
      * Make delete request
      */
-    public function delete($path){
+    public function delete($path, $data = null){
         $ch = $this->getCurlObject($path);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'DELETE');
+        if ($data) {
+            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+        }
         $result = curl_exec($ch);
         curl_close($ch);
         return json_decode($result);
